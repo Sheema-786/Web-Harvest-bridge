@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <section class="bg-gray-50 dark:bg-gray-900">
+        <div class="flex">
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                    Worker login
+                </a>
+               
+                <div
+                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1
+                            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Sign in to your account
+                        </h1>
+                        <p id="worker_message"></p>
+                      
+                            <div class="relative">
+                                <input type="email" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                    placeholder=" " required="">
+                                <label for="email" class="  absolute 
+                            text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                            peer-placeholder-shown:scale-100 
+                            peer-placeholder-shown:translate-y-0 
+                            peer-focus:scale-75
+                            peer-focus:-translate-y-3">email</label>
+
+                            </div>
+                            <div class="relative">
+                                <input type="email" name="email" id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                placeholder=" " required="">
+                            <label for="email" class="  absolute 
+                        text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                        peer-placeholder-shown:scale-100 
+                        peer-placeholder-shown:translate-y-0 
+                        peer-focus:scale-75
+                        peer-focus:-translate-y-3">password</label>
+                            </div>
+                            <button type="submit" id="worker_signin"
+                                class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
+                                in</button>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                                Don’t have an account yet? <a href="labour_register.html"
+                                    class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                    up</a>
+                            </p>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                    Farmer login
+                </a>
+                <div
+                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1
+                            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Sign in to your account
+                        </h1>
+                        <p id="farmer_message" class="text-red-500 text-center"></p>
+                        
+                            <div class="relative">
+                                <input type="email" name="email" id="farmer_email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                    placeholder=" " required="">
+                                <label for="email" class="  absolute 
+                            text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                            peer-placeholder-shown:scale-100 
+                            peer-placeholder-shown:translate-y-0 
+                            peer-focus:scale-75
+                            peer-focus:-translate-y-3">email</label>
+
+                            </div>
+                            <div class="relative">
+                                <input type="email" name="email" id="farmer_password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                placeholder=" " required="">
+                            <label for="email" class="  absolute 
+                        text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                        peer-placeholder-shown:scale-100 
+                        peer-placeholder-shown:translate-y-0 
+                        peer-focus:scale-75
+                        peer-focus:-translate-y-3">password</label>
+                            </div>
+                            <button type="submit" id="farmer_signin"
+                                class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
+                                in</button>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                                Don’t have an account yet? <a href="farmer_register.html"
+                                    class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                    up</a>
+                            </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js"
+    import { getAuth,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+ document.getElementById("farmer_signin").addEventListener("click",()=>{
+    // Import the functions you need from the SDKs you need
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyAjBud8l1x-QWHceiOd0jjQPg8IRp7HKPk",
+        authDomain: "crp-labour.firebaseapp.com",
+        projectId: "crp-labour",
+        storageBucket: "crp-labour.appspot.com",
+        messagingSenderId: "324630635344",
+        appId: "1:324630635344:web:b67a40fdd6091806810255",
+        measurementId: "G-5GQ8TJF8XH"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth=getAuth(app)
+   
+        var email=document.getElementById("farmer_email").value
+        var password=document.getElementById("farmer_password").value
+       
+            signInWithEmailAndPassword(auth,email,password).then((res)=>window.location.assign("http://localhost/labour/Farmer_home.php")).catch((e)=>{console.log(e.message)
+            document.getElementById("farmer_message").innerText=e.message
+        })
+    })
+</script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js"
+    import { getAuth,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    document.getElementById("worker_signin").addEventListener("click",()=>{
+    const firebaseConfig2 = {
+    apiKey: "AIzaSyAr6n1EZXiez0kQ1wgKYclpxTox17-gI-I",
+    authDomain: "crp-worker2.firebaseapp.com",
+    projectId: "crp-worker2",
+    storageBucket: "crp-worker2.appspot.com",
+    messagingSenderId: "485318327079",
+    appId: "1:485318327079:web:d1d6853ee23aa3449b4702",
+    measurementId: "G-WCYTTWQXYJ"
+  };
+  
+    // Initialize Firebase
+    const app2 = initializeApp(firebaseConfig2);
+    const auth2=getAuth(app2)
+    
+        var email=document.getElementById("email").value
+        var password=document.getElementById("password").value
+       
+            signInWithEmailAndPassword(auth2,email,password).then((res)=>window.location.assign("http://localhost/labour/labour_home.php")).catch((e)=>{console.log(e.message)
+            document.getElementById("worker_message").innerText=e.message
+        })
+    })
+  </script>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <section class="bg-gray-50 dark:bg-gray-900">
+
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                worker register
+            </a>
+            <div
+                class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1
+                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Sign in to your account
+                    </h1>
+                    <p id="message" class="flex text-center font-semibold text-red-500"></p>
+                   
+                        <div class="relative">
+                            <input type="email" name="email" id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                placeholder=" " required="">
+                            <label for="email" class="  absolute 
+                            text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                            peer-placeholder-shown:scale-100 
+                            peer-placeholder-shown:translate-y-0 
+                            peer-focus:scale-75
+                            peer-focus:-translate-y-4">email</label>
+
+                        </div>
+                        <div class="relative">
+                            <input type="text" name="email" id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                placeholder=" " >
+                            <label for="email" class="  absolute 
+                        text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                        peer-placeholder-shown:scale-100 
+                        peer-placeholder-shown:translate-y-0 
+                        peer-focus:scale-75
+                        peer-focus:-translate-y-4">password</label>
+                        </div>
+                        <div class="relative">
+                            <input type="text" name="email" id="confirmpassword"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 peer"
+                                placeholder=" " required="">
+                            <label for="email" class="  absolute 
+                text-md text-zinc-400  duration-150 transform -translate-y-5 scale-75 top-3  z-10 origin-[0] left-4
+                peer-placeholder-shown:scale-100 
+                peer-placeholder-shown:translate-y-0 
+                peer-focus:scale-75
+                peer-focus:-translate-y-4">Confirm password</label>
+                        </div>
+                        <button type="submit" id="signin"
+                            class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
+                            up</button>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Do have an account yet? <a href="./index.html"
+                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                In</a>
+                        </p>
+                   
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js"
+    import { getAuth ,createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ 
+    const firebaseConfig = {
+    apiKey: "AIzaSyAr6n1EZXiez0kQ1wgKYclpxTox17-gI-I",
+    authDomain: "crp-worker2.firebaseapp.com",
+    projectId: "crp-worker2",
+    storageBucket: "crp-worker2.appspot.com",
+    messagingSenderId: "485318327079",
+    appId: "1:485318327079:web:d1d6853ee23aa3449b4702",
+    measurementId: "G-WCYTTWQXYJ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+    console.log(auth)
+    document.getElementById("signin").addEventListener("click",()=>{
+        var email=document.getElementById("email").value
+        var password=document.getElementById("password").value
+        var conpass=document.getElementById("confirmpassword").value
+        if(password===conpass){
+            createUserWithEmailAndPassword(auth,email,password).then((res)=>alert("registration success login now")).catch((e)=>document.getElementById("message").innerHTML=e.message)
+        }
+        else{
+            document.getElementById("message").innerText="invalid"
+        }
+    })
+</script>
+</html>
